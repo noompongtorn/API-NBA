@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main  # จะทำงานทุกครั้งที่ push ไป branch main
+      - main
 
 jobs:
   build:
@@ -17,7 +17,10 @@ jobs:
         run: docker build -t ygevo/api-nba:latest .
 
       - name: Login to Docker Hub
-        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+        run: echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
 
       - name: Push to Docker Hub
         run: docker push ygevo/api-nba:latest
