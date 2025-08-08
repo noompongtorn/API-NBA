@@ -21,9 +21,9 @@ const { fetchCurrentGameData, fetchNBAData } = require('./config/service/nba-ser
 connectDB();
 
 // Middleware (optional: for parsing JSON or static files)
-// app.use(cors({
-//   origin: ['https://backoffice-nba.cquiz.app', 'http://localhost:3000'], // Allow both production and local development
-// }));
+app.use(cors({
+  origin: ['https://backoffice-nba.cquiz.app', 'http://localhost:3000'], // Allow both production and local development
+}));
 app.use(express.json());
 
 // Use the routes
