@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3006
 
 # สั่งรันแอป (ไฟล์หลักของคุณคือ index.js)
-CMD ["node", "index.js"]
+CMD ["node", "src/index.js"]
