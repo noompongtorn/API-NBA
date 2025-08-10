@@ -44,11 +44,11 @@ app.use("/nba/api/role", roleRoutes);
 app.use("/nba/api/v1/app", appRoutes);
 
 cron.schedule("0 * * * *", async () => {
-  await axios.get(`http://ygevo.myvnc.com/nba/api/v1/app/nba`);
+  await axios.get(`http://ygevo.myvnc.com/wnba/api/v1/app/nba`);
 });
 
 cron.schedule("0 * * * *", async () => {
-  await axios.get(`http://ygevo.myvnc.com/nba/api/v1/app/retry-nba`);
+  await axios.get(`http://ygevo.myvnc.com/wnba/api/v1/app/retry-nba`);
 });
 
 // cron.schedule('0 14 * * *', () => {
