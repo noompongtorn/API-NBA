@@ -4,7 +4,7 @@
   "description": "api nba reacord",
   "main": "index.js",
   "scripts": {
-    "start:dev": "node ./src/index.js",
+    "s": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migration": "node ./assets/migration.js && node ./assets/rotatePassword.js",
     "alter": "node ./assets/alter.js",
