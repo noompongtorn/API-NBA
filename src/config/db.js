@@ -3,10 +3,10 @@ const { Pool } = require('pg');
 // Create a new pool instance with PostgreSQL connection details
 const pool = new Pool({
   user: 'nba',
-  host: '27.254.145.186',
+  host: 'ygevo.myvnc.com',   // ✅ ใส่แค่ domain
   database: 'db_nba',
   password: 'db_nba',
-  port: 5432,
+  port: 5432,                // หรือพอร์ตที่ forward ไว้ เช่น 15432
 });
 
 // Function to connect to the PostgreSQL database
